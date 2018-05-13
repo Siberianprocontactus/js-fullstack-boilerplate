@@ -1,0 +1,46 @@
+{
+  "name": "template",
+  "version": "2.0.0",
+  "description": "Fullstack template for SPA: express, mongodb, react, redux",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install && npm run dev",
+    "update": "git pull && npm install && npm run up",
+    "migrate": "./node_modules/.bin/db-migrate --config db-migrate.js",
+    "up": "npm run migrate -- up",
+    "down": "npm run migrate -- down",
+    "build": "cd ./front && npm run build",
+    "test": "./node_modules/mocha/bin/mocha ./test --recursive",
+    "dev": "./node_modules/.bin/nodemon --exec 'npm test && node ./'",
+    "prod": "NODE_ENV=production node ./"
+  },
+  "author": "Kuntsevich Andrei",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1",
+    "nodemon": "^1.15.1",
+    "shelljs": "^0.7.8"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "config": "^1.29.4",
+    "connect-mongo": "^2.0.0",
+    "db-migrate": "^0.10.0-beta.24",
+    "db-migrate-mongodb": "^1.3.0",
+    "deep-equal": "^1.0.1",
+    "deepmerge": "^2.0.0",
+    "error-to-json": "^1.1.0",
+    "express": "^4.16.2",
+    "express-history-api-fallback": "^2.2.1",
+    "express-session": "^1.15.6",
+    "log4js": "^2.3.10",
+    "md5": "^2.2.1",
+    "moment": "^2.19.1",
+    "mongodb": "^2.2.33",
+    "nocache": "^2.0.0",
+    "node-fetch": "^1.7.3",
+    "nodemailer": "^4.3.1",
+    "string-template": "^1.0.0"
+  }
+}
